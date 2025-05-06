@@ -28,7 +28,7 @@
                 $_SESSION["user"] = $user; // Store data in session
 
                 // Redirect
-                header("Location: /");
+                header("Location: /dashboard");
                 exit;
             } else {
                 echo "Wrong password";
