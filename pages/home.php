@@ -1,16 +1,6 @@
 <?php
     // Connect to Database
     $database = connectToDB();
-
-    // 3. Get data from database
-    // 3.1 - SQL Command(recipe)
-    $sql = "SELECT * FROM todos";
-    // 3.2 - prepare SQL query(prep material)
-    $query = $database->prepare($sql);
-    // 3.3 - execute SQL query(cook)
-    $query->execute();
-    // 3.4 - fetch result from query(eat)
-    $todos = $query->fetchAll();
 ?>
 
 <!DOCTYPE html>

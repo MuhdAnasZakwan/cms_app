@@ -3,7 +3,7 @@
     function connectToDB () {
         // Database info
         $host = "127.0.0.1";
-        $database_name = "cms_database";
+        $database_name = "cms-database";
         $database_user = "root";
         $database_password = "";
     

@@ -17,11 +17,11 @@
                 <form method="POST" action="/auth/login">
                     <div class="mb-2">
                         <label for="email" class="visually-hidden">Email</label>
-                        <input type="text" class="form-control" id="email" placeholder="email@example.com"/>
+                        <input type="text" class="form-control" id="email" placeholder="email@example.com" name="email"/>
                     </div>
                     <div class="mb-2">
                         <label for="password" class="visually-hidden">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password"/>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password"/>
                     </div>
                     <div class="d-grid">
                         <button type="submit" class="btn btn-primary">Login</button>
