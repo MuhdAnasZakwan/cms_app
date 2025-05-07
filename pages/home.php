@@ -50,7 +50,7 @@
                     <?php else : ?>
                         <a href="/login" class="btn btn-link btn-sm">Login</a>
                         <a href="/signup" class="btn btn-link btn-sm">Sign Up</a>
-                    <?php endif : ?>
+                    <?php endif; ?>
                 </div>
         </div>
 

@@ -9,9 +9,15 @@
 
     // Check Error
     if ( empty($name) || empty($email) || empty($password) || empty($confirm_password)) {
-        echo "Everything is required";
+        $_SESSION["error"] = "Everything is required";
+        // Redirect
+        header("Location: /signup");
+        exit;
     } else if ($password !== $confirm_password) {
-        echo "Unmatched password";
+        $_SESSION["error"] = "Unmatched password";
+        // Redirect
+        header("Location: /signup");
+        exit;
     } else {
         // Check Exist
         // SQL Command
@@ -25,7 +31,10 @@
         // Fetch (only to get data first row only)
         $user = $query->fetch();
         if ($user) {
-            echo "Already sign in lah";
+            $_SESSION["error"] = "Already sign in lah";
+            // Redirect
+            header("Location: /signup");
+            exit;
         } else {
             // Create account
             // SQL Command
@@ -38,6 +47,7 @@
                 "email" => $email,
                 "password" => password_hash($password, PASSWORD_DEFAULT)
             ]);
+            $_SESSION["success"] = "got account, now login";
             // Redirect
             header("Location: /login");
             exit;

@@ -7,7 +7,11 @@
 
     // Check Error
     if ( empty($email) || empty($password)) {
-        echo "Everything is required";
+        $_SESSION["error"] = "Everything is required";
+        // Redirect
+        header("Location: /login");
+        exit;
+
     } else {
         // Get data by email
         // SQL Command
@@ -26,15 +30,22 @@
             // Check Password
             if (password_verify($password, $user["password"])) {
                 $_SESSION["user"] = $user; // Store data in session
+                $_SESSION["success"] = "Welcome back, " . $user["name"] . "-sensei.";
 
                 // Redirect
                 header("Location: /dashboard");
                 exit;
             } else {
-                echo "Wrong password";
+                $_SESSION["error"] = "Wrong password";
+                // Redirect
+                header("Location: /login");
+                exit;
             }
         } else {
-            echo "Sign up first lah";
+            $_SESSION["error"] = "Sign up first lah";
+            // Redirect
+            header("Location: /login");
+            exit;
         }
     }
 ?>
